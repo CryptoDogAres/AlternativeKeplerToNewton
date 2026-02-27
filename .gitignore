@@ -16,8 +16,5 @@
 *.snm
 *.vrb
 
-# Local build output
-main.pdf
-
 # Oversized source PDF kept locally only
 refs/pdf/newtons-principia-for-the-common-reader-reprintnbsped-0198517440.pdf
