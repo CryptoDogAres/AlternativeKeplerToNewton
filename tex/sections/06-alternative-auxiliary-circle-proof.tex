@@ -1,0 +1,159 @@
+\section{An alternative auxiliary-circle proof (same inverse-square law)}
+\label{sec:alternative-proof}
+
+In this section we give a second derivation of the same $1/r^2$ law, still using the auxiliary circle $C$ (center $O$, radius $a$), but emphasizing a different set of local ellipse facts so that the argument has as few moving parts as possible.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{assets/images/proof2_1.png}
+  \caption{Alternative auxiliary-circle construction used in Section~\ref{sec:alternative-proof}.}
+  \label{fig:proof2-1}
+\end{figure}
+
+\subsection{Setup (only what we use)}
+
+Let the ellipse have foci $F,F'$. Fix a point $A$ on the ellipse and write $r=FA$.
+Let the tangent at $A$ meet the auxiliary circle again at $A'$. For a nearby point $B$ on the ellipse, let its tangent meet the same auxiliary circle at $B'$. We let $B\to A$.
+Denote these tangent lines by $t_A$ and $t_B$, respectively; the instantaneous velocity vectors $\mathbf v_A$ and $\mathbf v_B$ are directed along $t_A$ and $t_B$.
+
+Let $D$ be the intersection point on the tangent construction (as in \Cref{fig:proof2-1}), and let $R$ be the foot used to form the small segment $BR$ (the small transverse piece in the right triangle at $R$).
+
+\subsection{Two standalone lemmas}
+
+\begin{lemma}[Product identity]
+  \label{lem:product-identity}
+  With the notation of \Cref{fig:proof2-1},
+  \begin{equation}
+    FH\cdot F'\!A'=(a-c)(a+c)=b^2,
+  \end{equation}
+  where $c=OF$ is the focal distance (so $a^2=b^2+c^2$).
+\end{lemma}
+
+\begin{proof}
+  Since $FK' \parallel F'A'$ in the construction, triangles with corresponding sides along these parallels are similar, and the segment on the parallel through $F$ has the same length as the corresponding segment on the tangent through $F'$. In particular,
+  \begin{equation}
+    F'\!A' = FK'.
+  \end{equation}
+  Therefore
+  \begin{equation}
+    FH\cdot F'\!A' = FH\cdot FK' = (a-c)(a+c)=a^2-c^2=b^2,
+  \end{equation}
+  which is the standard ellipse identity.
+\end{proof}
+
+\begin{lemma}[Newton small-distance lemma]
+  \label{lem:newton-small-distance}
+  As $B\to A$, the little segments cut off by nearby tangents/secants agree to first order; thus the similar-triangle relations used below are valid in the Newtonian (1687) ``ultimate ratio'' sense (any error is higher order and vanishes in the limit).
+\end{lemma}
+
+\subsection{Proof 2 (constant \texorpdfstring{$BD/BR^2$}{BD over BR squared} \texorpdfstring{$\Rightarrow$}{=>} inverse-square law)}
+
+\paragraph{Step 1: a similarity formula for $BD$.}
+As $B\to A$, similarity of the indicated triangles in \Cref{fig:proof2-1} gives
+\begin{equation}
+  \triangle SDB \sim \triangle F'\!A'B'
+  \qquad\Longrightarrow\qquad
+  BD=\frac12\,AD\cdot\frac{A'B'}{A'F'}.
+\end{equation}
+(The factor $1/2$ is the same midpoint/evanescent factor as in the earlier Newton-style tangent-departure setup.)
+
+In particular, this step highlights again the pair of similar triangles $\triangle F'\!A'B'$ and $\triangle SDB$ that drives the computation.
+
+\paragraph{Step 2: express both $AD$ and $A'B'$ in terms of $BR$.}
+From the focal-geometry similarity in the figure,
+\begin{equation}
+  AD=\frac{AF}{FH}\,BR=\frac{r}{FH}\,BR.
+\end{equation}
+From the auxiliary-circle similarity (equivalently, the affine scaling ellipse $\leftrightarrow$ circle),
+\begin{equation}
+  A'B'=\frac{OA'}{F'\!A}\,BR=\frac{a}{r}\,BR.
+\end{equation}
+
+\paragraph{Step 3: multiply and collapse.}
+Substituting the two expressions into the $BD$ formula yields
+\begin{align}
+  BD
+  &=\frac12\left(\frac{r}{FH}BR\right)\left(\frac{a}{r}BR\right)\frac{1}{A'F'}\\
+  &=\frac12\,a\,\frac{BR^2}{FH\cdot A'F'}.
+\end{align}
+Using \Cref{lem:product-identity} (so that $FH\cdot A'F'=b^2$) we obtain
+\begin{equation}
+  BD=\frac12\,a\,\frac{BR^2}{b^2}.
+\end{equation}
+
+Finally, using the standard ellipse identity $p=b^2/a$ (the semi-latus rectum), one may rewrite the above in the equivalent form
+\begin{equation}
+  BD=\frac{1}{2p}\,BR^2,
+\end{equation}
+so
+\[
+  \frac{BD}{BR^2}\to \frac{1}{2p}.
+\]
+Applying \Cref{lem:bd-over-br2} with $c=\frac{1}{2p}$ gives immediately
+\[
+  a_F=\frac{2cL^2}{r^2}=\frac{L^2}{p}\frac{1}{r^2}.
+\]
+\hfill$\square$
+
+\subsection{Proof 3 (hodograph-style computation)}
+\label{subsec:proof3-hodograph}
+
+From \Cref{lem:product-identity},
+\begin{equation}
+  F'\!A'=\frac{b^2}{FH}.
+\end{equation}
+Let $v=\lvert \mathbf v\rvert$ be the speed at $A$. Since the velocity direction is tangent to the orbit and $FH$ is perpendicular to that tangent (as in the construction), the areal-rate constant gives
+\begin{equation}
+  FH\cdot v = L.
+\end{equation}
+Combining,
+\begin{equation}
+  F'\!A'=\frac{b^2}{FH}=\frac{v\,b^2}{L}.
+\end{equation}
+For two nearby points $A,B$ we therefore have, in the Newtonian small-step sense,
+\begin{equation}
+  A'B'=\Delta(F'\!A')=\frac{b^2}{L}\,\Delta v
+  =\frac{b^2}{L}\,a_F\,\Delta t,
+\end{equation}
+where $a_F$ is the magnitude of the (focus-directed) acceleration and we used \Cref{lem:deflection-identity} ($\Delta v=a_F\Delta t$).
+On the other hand, from the auxiliary-circle similarity used above,
+\begin{equation}
+  A'B'=\frac{OA'}{F'\!A}\,BR=\frac{a}{r}\,BR.
+\end{equation}
+Eliminating $A'B'$ gives
+\begin{equation}
+  a_F=\frac{L}{b^2}\,\frac{A'B'}{\Delta t}.
+\end{equation}
+Next, using again the auxiliary-circle similarity $A'B'=\frac{a}{r}BR$ and \Cref{lem:bd-over-br2} ($BR\sim L\Delta t/r$), we have
+\begin{equation}
+  A'B'=\frac{a}{r}\,\frac{L\,\Delta t}{r}
+  =\frac{a}{r^2}\,L\,\Delta t.
+\end{equation}
+Combining equations~(6.18)--(6.19) yields
+\begin{equation}
+  a_F=\frac{L^2}{p}\,\frac{1}{r^2}.
+\end{equation}
+exactly the same inverse-square formula as in equations~(5.14)--(5.15).
+\hfill$\square$
+
+\subsection{Discussion: directrix circle and a hodograph viewpoint}
+\label{subsec:sec6-discussion}
+
+\paragraph{Directrix circle variant.}
+One can re-run essentially the same similarity argument by replacing the auxiliary circle $\mathcal C$ (center $O$, radius $a$) with the \emph{directrix circle} centered at $F$ of radius $2a$ (cf.\ the construction used in Section~5).
+Extending $FA$ to meet this directrix circle at $A''$, one has $A''A'F'$ colinear; similarly, extending $FB$ meets the directrix circle at $B''$ with $B''B'F'$ colinear.
+Moreover, $A'$ and $B'$ are midpoints of the segments $A''F'$ and $B''F'$, respectively, so
+\begin{equation}
+  A''B'' = 2\,A'B'.
+\end{equation}
+Consequently,
+\begin{equation}
+  \triangle A'B'F' \sim \triangle A''B''F',
+\end{equation}
+and the same chain of similar-triangle identities yields the same ultimate-ratio estimate for the normal drop $BD$, hence the same inverse-square dependence.
+
+\paragraph{Connection to Maxwell's hodograph.}
+The product identity in \Cref{lem:product-identity} (already implicit in classical ellipse geometry) also appears in Maxwell's 1877 discussion of the \emph{hodograph} of planetary motion: for an inverse-square central force the velocity vector $\mathbf v(t)$ traces a circle in velocity space (Hamilton's 1847 hodograph), and Maxwell notes that this hodograph circle is similar to the directrix circle, with its ``speed origin'' at $F'$, but rotated by $90^\circ$ counterclockwise \cite{maxwell1877mattermotion}.
+
+From this point of view, our construction may be read as relating the geometric drop $BD$ directly to a rotated hodograph circle $C$.
+This suggests a third, very short proof that reproduces the same acceleration formula.

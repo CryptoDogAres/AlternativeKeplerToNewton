@@ -1,0 +1,14 @@
+\section{Setup and assumptions}
+
+Let an ellipse have semi-major axis $a$, semi-minor axis $b$, and foci $F$ and $F'$. A point mass $m$ moves along the ellipse in a plane. Let $r=\lvert FA\rvert$ be the instantaneous distance to the focus $F$. See \Cref{fig:affine-relation-of-motion} for the auxiliary-circle/ellipse construction used later.
+
+\textbf{Hypothesis H1 (ellipse):} the orbit is an ellipse with focus at $F$.
+
+\textbf{Hypothesis H2 (area law):} \emph{equal areas are swept in equal times} about $F$ (Kepler's second law, 1609). Equivalently, there is a constant $k$ such that for any time interval of length $t$, the swept area satisfies
+\begin{equation}
+  S = k\,t.
+\end{equation}
+
+It is convenient to write $L := 2k$ (twice the constant area rate), so that the swept area in time $t$ is $S=(L/2)t$. In modern mechanics, this constant is the \emph{specific angular momentum} (angular momentum per unit mass); many texts denote it by $h$ (see, e.g., \cite{chandrasekhar1995principia,goodstein1996feynman}). The ordinary angular momentum is then $\mathcal{L}=mL$.
+
+We assume the motion is smooth enough that ``short time step'' expansions are valid in the usual limiting sense (errors are higher order in the small time step).

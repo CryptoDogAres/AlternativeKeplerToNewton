@@ -1,36 +1,39 @@
 # AlternativeKeplerToNewton
 
-This repository contains a full geometric manuscript on the Kepler problem in a Principia-style spirit, with modern organization and notation.
+This repository contains a geometry-first manuscript on the Kepler problem in a Principia-style spirit, with modern organization and notation.
 
 ## Scope
 
-The paper develops a geometry-first treatment of:
+The paper develops a synthetic treatment of:
 
-- Kepler's laws (especially area law and conic orbits)
+- Kepler's laws (especially areal speed and conic orbits)
 - Newton's central-force direction and inverse-square law
 - Geometric properties of conics (ellipse, hyperbola, parabola, and degenerate limits)
 - Auxiliary-circle and affine-map constructions
 - Hodograph-style arguments and interpretations
 
-The emphasis is synthetic geometry and explicit constructions rather than differential-equation-driven derivations.
-
-## Main claims of the manuscript
-
-- From constant areal speed, the force/acceleration direction is central.
-- From conic geometry (with focus at the force center), the acceleration magnitude follows an inverse-square dependence.
-- The same geometric framework extends to non-elliptic conics and connects naturally to hodograph viewpoints.
-
 ## Repository layout
 
-- `main.tex`: main manuscript source
-- `references.bib`, `references_2.bib`: bibliography sources
-- `*.png`: figures used in the manuscript
-- `*.ggb`: GeoGebra construction files
-- `reference/`: reference PDFs used during development
+- `main.tex`: root compile entrypoint (assembles the whole document)
+- `tex/preamble/`: package setup and theorem/style configuration
+- `tex/frontmatter/`: title block and abstract
+- `tex/sections/`: one source file per top-level section
+- `tex/backmatter/`: bibliography commands
+- `assets/images/`: manuscript figures (`.png`)
+- `assets/ggb/`: GeoGebra construction files (`.ggb`)
+- `bib/references.bib`: active bibliography database
+- `bib/archive/references_2.bib`: archived bibliography file
+- `refs/pdf/`: external reference PDFs used during drafting
 
 ## Build
 
 From the repository root:
+
+```bash
+latexmk -pdf -interaction=nonstopmode -file-line-error main.tex
+```
+
+Manual BibTeX sequence is also supported:
 
 ```bash
 pdflatex main.tex
@@ -38,5 +41,3 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 ```
-
-If your LaTeX setup supports it, `latexmk -pdf main.tex` is also fine.

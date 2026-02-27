@@ -1,0 +1,40 @@
+\section{Introduction}
+
+Newton's original geometric arguments connecting Keplerian motion to an inverse-square central force appear in the first edition (1687) of the \emph{Principia} \cite{newton1687principia}; see also the 1846 Motte translation \cite{newton1846mottewikisource}. In a nutshell: from Kepler's laws (first and second laws, both 1609)---knowing in particular that the orbit is an ellipse and that equal areas are swept in equal times---Newton inferred that the acceleration is central and proportional to $1/r^2$.
+
+Modern reconstructions and textbook-style accounts of Newton's ellipse $\Rightarrow 1/r^2$ direction can be found in, e.g., \cite{chandrasekhar1995principia,ostermannwanner2012geometry,markowsky2011newton}. The reverse direction (inverse-square $\Rightarrow$ conic orbits) is famously associated with Feynman's 1964 ``lost lecture'' \cite{goodstein1996feynman}, with earlier related ideas already appearing in Maxwell's 1877 treatment and related 19th-century work.
+
+The goal of the present paper is not to contribute to the reverse-direction derivation, but to give an alternative, fully geometric route to the inverse-square law from Keplerian (in particular, elliptic) geometry.
+\paragraph{Two aspects of the argument:}
+\begin{enumerate}[label=(\roman*),leftmargin=*]
+  \item \textbf{From Kepler's area law: central direction.}
+    From Kepler's second law (1609; equal areas in equal times about the Sun/focus), the acceleration is directed toward the focus (Book~I, Proposition~1, 1687).
+
+  \item \textbf{From the ellipse shape: inverse-square magnitude.}
+    With Kepler's first law (1609; elliptic orbit with the Sun at a focus), the magnitude of the centripetal acceleration scales as $1/r^{2}$ (Book~I, Propositions~11--13, 1687, in modern numbering/conventions).
+\end{enumerate}
+
+We briefly summarize what the main cited references emphasize, to clarify how the present proof fits among them (we refer to the bibliography for full details). For historical discussion of how Book~I evolves across different versions/editions, see also \cite{novotnykeytonewtondynamics}.
+\begin{itemize}
+  \item \textbf{Newton (1687) \cite{newton1687principia}.} Newton's masterpiece uses synthetic (polygonal) arguments together with an early notion of limits (ultimate/last ratios): equal areas in equal times imply a central impulse toward the focus, and the inverse-square dependence is extracted via geometric properties of the ellipse.
+
+  \item \textbf{Chandrasekhar (1995) \cite{chandrasekhar1995principia}.} A detailed modern reconstruction of Newton's arguments, combining synthetic geometry with contemporary analytic language.
+
+  \item \textbf{Goodstein \& Goodstein (1996) \cite{goodstein1996feynman}.} A geometric narrative inspired by Feynman's 1964 ``lost lecture,'' emphasizing a nearly calculus-free route for the reverse direction (inverse-square $\Rightarrow$ conic orbits) using hodograph synthesis.
+
+  \item \textbf{Derbes (2001) \cite{derbes2001reinventing}.} A clear pedagogical account of hodographic (velocity-space) methods for the Kepler problem, including the parabolic case.
+
+  \item \textbf{Stavek (2019) \cite{stavek2019newtonsparabola}.} A geometric exploration centered on Newton's parabola and related classical constructions (directrix, pedal curve, evolute, subtangent/subnormal, and a Ptolemy-circle/hodograph viewpoint).
+
+  \item \textbf{Markowsky (2011) \cite{markowsky2011newton}.} A careful retelling and streamlining of Newton's arguments, with an emphasis on geometric structure and pedagogy. Markowsky also emphasizes that whether Newton regarded ``having a solution'' as sufficient for the reverse direction (inverse-square $\Rightarrow$ conics) is debatable: one can justify the step via existence/uniqueness results for the associated ordinary differential equations. It also seeks a \emph{Principia}-style proof of energy conservation, from which one can derive that the trajectory is a conic.
+
+  \item \textbf{Provost \& Bracco (2008) \cite{provostbracco2008simple}.} A hybrid yet insightful and concise derivation highlighting conserved quantities---essentially the Laplace--Runge--Lenz vector---that analytical approaches often use to show that the path is a conic. This paper offers an elementary view based on areal speed and related geometric relations, and also summarizes Jakob Hermann's early-18th-century proof (c.\ 1710s) and the aforementioned proof of Hamilton (1847).
+
+  \item \textbf{Woan \cite{a1dynamicalastronomy}.} A standard mechanics approach in polar coordinates, deriving the conic form by solving for $r(\theta)$ using angular momentum and energy, in the tradition of analytic approaches developed by mathematicians such as Bernoulli (late 17th to early 18th century).
+
+  \item \textbf{Simha (2021) \cite{simha2021algebra}.} A calculus-light, trigonometric presentation of Kepler's first law; it substantially overlaps with the Markowsky-style approach, possibly without awareness of that earlier source. It is mentioned here because it uses the law of cosines effectively.
+
+  \item \textbf{van~Haandel \& Heckman (2009) \cite{vanhaandelheckman2009teaching}.} A freshman-oriented teaching note emphasizing geometric intuition. Besides giving a quick account of Feynman and Newton's methods, it also provides a geometric construction of the LRL vector that offers further insight into the reverse problem.
+\end{itemize}
+
+In Sections~2--3 we briefly repeat Newton's argument (1687, with his figure) showing why the area theorem implies a centripetal (central) force. In Sections~4--8 we present a geometric method, based on the auxiliary circle and an affine map, that yields the inverse-square dependence. The proof here is closer in spirit to Newton's synthetic geometry, but it is organized around a particular auxiliary construction: we compute the short-time ``departure from the tangent'' on the ellipse via an explicit affine map to the auxiliary circle, show that the corresponding quantities match, and then the rest follows.

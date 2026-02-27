@@ -1,2 +1,23 @@
-reference/newtons-principia-for-the-common-reader-reprintnbsped-0198517440.pdf
-reference/newtons-principia-for-the-common-reader-reprintnbsped-0198517440.pdf
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Local build output
+main.pdf
+
+# Oversized source PDF kept locally only
+refs/pdf/newtons-principia-for-the-common-reader-reprintnbsped-0198517440.pdf

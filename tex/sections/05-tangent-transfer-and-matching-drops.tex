@@ -1,0 +1,172 @@
+\section{Tangent transfer and matching normal drops}
+
+We record a concrete straightedge-and-compass configuration that makes the affine ``transport'' of the short-time normal departure from the tangent completely explicit.
+The purpose of this section is to obtain the geometric local-drop estimate; the kinematic conversion to acceleration then uses \Cref{lem:deflection-identity,lem:bd-over-br2} from Section~3.
+
+\subsection{Circle companions and tangent transfer}
+
+Let $\ell$ be the major axis, and let $\Phi$ map the auxiliary circle $\mathcal{C}$ to the ellipse. From $A$ and $B$ drop perpendiculars to $\ell$ and extend these same vertical lines to meet the auxiliary circle $\mathcal C$ at $A_0$ and $B_0$ (choose the intersections on the same side of $\ell$ as $A$ and $B$). By construction, $\Phi(A_0)=A$ and $\Phi(B_0)=B$.
+Draw the tangent to $\mathcal C$ at $A_0$ and let it meet $\ell$ at $T$.
+
+\begin{lemma}[Tangent transfer with fixed $T$]
+  \label{lem:tangent-transfer}
+  Under $\Phi$, the circle tangent at $A_0$ maps to the ellipse tangent at $A$. Moreover, since $\Phi$ fixes $\ell$ pointwise, the intersection point $T\in\ell$ is the same for both tangents.
+\end{lemma}
+\begin{proof}
+  $TA_0$ is the tangent to the circle at $A_0$. For points $B_0$ on the circle taken sufficiently near $A_0$, all such $B_0$ lie on the same side of the line $TA_0$.
+
+  The affine bijection $\Phi$ sends lines to lines and half-planes to half-planes, so it preserves the relation ``lying on the same side of a line.'' Hence the line $\Phi(T)\Phi(A_0)$ meets the ellipse at $A=\Phi(A_0)$. Since $\Phi(T)=T$ and all nearby image points $B=\Phi(B_0)$ lie on one side of $TA$, the line $TA$ is tangent to the ellipse at $A$.
+
+  Here we implicitly use the fact that a conic is smooth and therefore has a unique and well-defined tangent line at each point.\qedhere
+\end{proof}
+
+\subsection{The \texorpdfstring{$B,C,D$}{B,C,D} construction (ellipse and circle)}
+
+Define $C$ as the intersection of the ellipse tangent $TA$ with the line through $B$ parallel to $\ell$, and define $D:=TA\cap FB$. Likewise, on the circle tangent $TA_0$ define $C_0$ as the intersection with the line through $B_0$ parallel to $\ell$, and define $D_0:=TA_0\cap OB_0$. By construction, $BC\parallel\ell$ and $B_0C_0\parallel\ell$.
+
+\subsection{The point \texorpdfstring{$J$}{J} is on \texorpdfstring{$\mathcal{C}$}{C}}
+
+Extend the ray $AF$ beyond $A$ and mark a point $F''$ on this ray such that $AF''=AF'$ (so $\triangle AF'F''$ is isosceles). Let $J:=AT\cap F'F''$.
+
+\begin{lemma}[Ellipse tangent bisects the focal angle]
+  The tangent line $AT$ bisects $\angle F''AF'$.
+\end{lemma}
+
+In particular (by the isosceles geometry), $AT\perp F'F''$ and $J$ is the midpoint of $F'F''$. But we also know $O$ bisects $FF'$, so $OJ\parallel FA$ and $OJ=FF''/2=a$, which proves that $J$ lies on the circle $\mathcal{C}$.
+
+\subsection{Matching the normal drops}
+
+The triangle similarity relations in the tangent line through $T$ give
+\begin{equation}
+  B_0D_0 = B_0C_0\,\frac{OD_0}{OT},
+  \qquad
+  BD = BC\,\frac{FD}{FT}.
+\end{equation}
+Dividing and using that $\Phi(B_0)=B$ and $\Phi$ maps the line through $B_0$ parallel to $\ell$ to the line through $B$ parallel to $\ell$ (since $\Phi$ fixes $\ell$ and preserves parallelism), while also mapping the tangent line $TA_0$ to $TA$, we have $\Phi(C_0)=C$. Hence the horizontal segment $B_0C_0$ is carried to $BC$, and since $\Phi$ preserves horizontal lengths, $B_0C_0=BC$.
+\begin{equation}
+  \frac{B_0D_0}{BD}=\frac{OD_0}{OT}\cdot\frac{FT}{FD}.
+\end{equation}
+Letting $B\to A$ (so $D_0\to A_0$ and $D\to A$), we obtain
+\begin{equation}
+  \lim_{B\to A}\frac{B_0D_0}{BD}=\frac{OA_0}{OT}\cdot\frac{FT}{FA}.
+\end{equation}
+
+\begin{proposition}[Matching drops]
+  \label{prop:matching-drops}
+  In the infinitesimal-step limit, the circle and ellipse normal drops from the tangent agree:
+  \begin{equation}
+    \boxed{\;\lim_{B\to A}\frac{B_0D_0}{BD}=1.\;}
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  Now $F,O,T\in\ell$, and by construction $J\in AT$ and $OJ\parallel FA$. Hence triangles $\triangle TFA$ and $\triangle TOJ$ are similar. Therefore
+  \[
+    \frac{FT}{FA}=\frac{OT}{OJ}.
+  \]
+  Since $A_0,J\in\mathcal C$ we have $OA_0=OJ=a$, and consequently the right side of (5)
+  \[
+    \frac{OA_0}{OT}\cdot\frac{FT}{FA}=\frac{a}{OT}\cdot\frac{OT}{a}=1.
+  \]
+  which proves (6).
+\end{proof}
+
+\subsection{Transporting swept area from the ellipse to the circle}
+\label{sec:transport-and-sagitta}
+
+Let $A$ be the current point on the ellipse and $B$ the position after a small time increment $t$. Let the swept area about the focus be
+\begin{equation}
+  S = \operatorname{area}(\triangle F A B)=\frac{L}{2}\,t.
+\end{equation}
+
+We compare this to a corresponding small triangle on the circle. Let
+\begin{equation}
+  S_0 := \operatorname{area}(\triangle O A_0 B_0),
+\end{equation}
+Two geometric scalings relate $S$ and $S_0$:
+\begin{enumerate}
+  \item \textbf{Height scaling from $O$ to $F$.} In the construction used in our discussion, the line through $F$ parallel to a fixed circle radius implies that the perpendicular height from $F$ to the chord $AB$ is $(r/a)$ times the perpendicular height from $O$ to the same chord direction. Hence
+    \begin{equation}
+      \operatorname{area}(\triangle F A B)=\frac{r}{a}\,\operatorname{area}(\triangle O A B).
+    \end{equation}
+
+  \item \textbf{Affine area scaling.} Since $\Phi$ scales area by $b/a$,
+    \begin{equation}
+      \operatorname{area}(\triangle O A B)=\frac{b}{a}\,\operatorname{area}(\triangle O A_0 B_0)=\frac{b}{a}\,S_0.
+    \end{equation}
+\end{enumerate}
+
+Combining,
+\begin{equation}
+  S=\operatorname{area}(\triangle F A B)=\frac{r}{a}\cdot\frac{b}{a}\,S_0=\frac{rb}{a^2}\,S_0,
+\end{equation}
+so
+\begin{align}
+  S_0 &= \frac{a^2}{rb}\,S \label{eq:s0-from-area}
+  = \frac{a^2}{rb}\cdot \frac{L}{2}\,t
+  = \frac{L a^2}{2 b r}\,t.
+\end{align}
+
+\subsection{Circle tangent + sagitta}
+\label{subsec:sagitta}
+
+As $B_0\to A_0$, \eqref{eq:s0-from-area} gives
+\begin{equation}\label{eq:a0d0}
+  A_0D_0 = \frac{2S_0}{a}=
+  \frac{2}{a}\cdot\frac{L a^2}{2 b r}\,t
+  =\frac{L a}{b r}\,t.
+\end{equation}
+
+Now use elementary circle geometry relating the \emph{normal drop} from the circle to its tangent (the sagitta). For a circle of radius $a$, the perpendicular distance from the circle point reached to the tangent line satisfies (to leading order)
+\begin{equation}
+  B_0D_0 \approx \frac{(A_0D_0)^2}{2a}.
+\end{equation}
+Substituting \eqref{eq:a0d0} gives
+\begin{equation}
+  B_0D_0 \approx \frac{1}{2a}\left(\frac{L a}{b r}t\right)^2
+  = \frac{L^2 a}{2 b^2 r^2}\,t^2.
+\end{equation}
+
+\subsection{From circle acceleration to ellipse acceleration}
+\label{subsec:circle-to-ellipse-accel}
+
+From \Cref{prop:matching-drops} and the sagitta estimate above,
+\[
+  BD\sim B_0D_0\sim \frac{L^2 a}{2 b^2 r^2}\,t^2.
+\]
+Also, by the area-law relation (equivalently, the first asymptotic in \Cref{lem:bd-over-br2}),
+\[
+  BR\sim \frac{L}{r}\,t.
+\]
+Therefore
+\[
+  \frac{BD}{BR^2}\to \frac{a}{2b^2}=\frac{1}{2p},
+  \qquad \left(p=\frac{b^2}{a}\right).
+\]
+Applying \Cref{lem:bd-over-br2} with $c=\frac{1}{2p}$ gives
+\begin{equation}
+  a_F=\frac{2cL^2}{r^2}
+  =\frac{L^2}{p}\cdot\frac{1}{r^2}
+  =\frac{L^2 a}{b^2}\cdot\frac{1}{r^2}.
+\end{equation}
+
+Together with Section~2 (direction toward $F$), we obtain the inverse-square central law:
+\begin{equation}
+  \boxed{\;\mathbf a_F(r) = -\mu\,\frac{\mathbf r}{r^3},\qquad \mu=\frac{L^2 a}{b^2}\;}
+\end{equation}
+where $\mathbf r$ is the position vector from $F$.
+
+Using the ellipse identity $p=b^2/a$ (the \emph{semi-latus rectum}), this can be written in the standard Newtonian form
+\begin{equation}
+  \mu=\frac{L^2}{p},\qquad \mathbf a = -\frac{L^2}{p}\,\frac{\mathbf r}{r^3}.
+\end{equation}
+Here $\mu$ is a single positive constant, commonly called the \emph{standard gravitational parameter}; in the usual physical notation one writes $\mu=GM$ (cf. \cite{chandrasekhar1995principia,goodstein1996feynman}).
+
+This also makes explicit how the \emph{shape} of the ellipse and the constant areal rate determine the physical parameter. Since $L=2k$ and $\mu=L^2/p$, we have
+\begin{equation}
+  \mu = \frac{(2k)^2}{p} = \frac{4k^2}{p}.
+\end{equation}
+Writing the semi-latus rectum as $p=b^2/a=a(1-e^2)$, this becomes
+\begin{equation}
+  \mu = \frac{L^2}{a(1-e^2)}.
+\end{equation}
+Equivalently, for a given inverse-square strength $\mu=GM$ and ellipse parameter $p$, the area-law constant is fixed by $k=\tfrac12\sqrt{\mu p}$ (so the orbit's geometry and the gravitating mass together determine the swept-area rate).

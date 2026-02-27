@@ -1,0 +1,50 @@
+% Encoding / fonts (arXiv-friendly default: pdfLaTeX)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Page/layout
+\usepackage[margin=1in]{geometry}
+
+% Math
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\providecommand{\wideparen}[1]{\overset{\frown}{#1}}
+% Number equations by section: (section.eq)
+\numberwithin{equation}{section}
+
+% Figures / tables
+\usepackage{graphicx}
+
+% Lists / columns
+\usepackage{multicol}
+\usepackage{enumitem}
+
+% More compact lists
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
+
+% Diagrams
+\usepackage{tikz-cd}
+
+% References / links
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{url}
+\usepackage{doi}
+\urlstyle{same}
+
+% Theorem environments (adjust to taste)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Paragraph style
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8\baselineskip}
