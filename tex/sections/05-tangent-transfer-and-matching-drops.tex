@@ -51,13 +51,13 @@ Letting $B\to A$ (so $D_0\to A_0$ and $D\to A$), we obtain
   \lim_{B\to A}\frac{B_0D_0}{BD}=\frac{OA_0}{OT}\cdot\frac{FT}{FA}.
 \end{equation}
 
-\begin{proposition}[Matching drops]
-  \label{prop:matching-drops}
+\begin{lemma}[Matching drops]
+  \label{lem:matching-drops}
   In the infinitesimal-step limit, the circle and ellipse normal drops from the tangent agree:
   \begin{equation}
     \boxed{\;\lim_{B\to A}\frac{B_0D_0}{BD}=1.\;}
   \end{equation}
-\end{proposition}
+\end{lemma}
 \begin{proof}
   Now $F,O,T\in\ell$, and by construction $J\in AT$ and $OJ\parallel FA$. Hence triangles $\triangle TFA$ and $\triangle TOJ$ are similar. Therefore
   \[
@@ -84,12 +84,12 @@ We compare this to a corresponding small triangle on the circle. Let
 \end{equation}
 Two geometric scalings relate $S$ and $S_0$:
 \begin{enumerate}
-  \item \textbf{Height scaling from $O$ to $F$.} In the construction used in our discussion, the line through $F$ parallel to a fixed circle radius implies that the perpendicular height from $F$ to the chord $AB$ is $(r/a)$ times the perpendicular height from $O$ to the same chord direction. Hence
+  \item Height scaling from $O$ to $F$. In the construction used in our discussion, the line through $F$ parallel to a fixed circle radius implies that the perpendicular height from $F$ to the chord $AB$ is $(r/a)$ times the perpendicular height from $O$ to the same chord direction. Hence
     \begin{equation}
       \operatorname{area}(\triangle F A B)=\frac{r}{a}\,\operatorname{area}(\triangle O A B).
     \end{equation}
 
-  \item \textbf{Affine area scaling.} Since $\Phi$ scales area by $b/a$,
+  \item Affine area scaling. Since $\Phi$ scales area by $b/a$,
     \begin{equation}
       \operatorname{area}(\triangle O A B)=\frac{b}{a}\,\operatorname{area}(\triangle O A_0 B_0)=\frac{b}{a}\,S_0.
     \end{equation}
@@ -106,7 +106,7 @@ so
   = \frac{L a^2}{2 b r}\,t.
 \end{align}
 
-\subsection{Circle tangent + sagitta}
+\subsection{Circle tangent and sagitta}
 \label{subsec:sagitta}
 
 As $B_0\to A_0$, \eqref{eq:s0-from-area} gives
@@ -126,10 +126,21 @@ Substituting \eqref{eq:a0d0} gives
   = \frac{L^2 a}{2 b^2 r^2}\,t^2.
 \end{equation}
 
-\subsection{From circle acceleration to ellipse acceleration}
-\label{subsec:circle-to-ellipse-accel}
+\subsection{Proof 1 (ellipse via affine transported drops)}
+\label{subsec:proof1-ellipse-affine}
 
-From \Cref{prop:matching-drops} and the sagitta estimate above,
+\begin{proposition}[Proof 1: direct problem for the ellipse]
+\label{prop:proof1-ellipse-inverse-square}
+Under Hypotheses H1--H2, the acceleration is focus-directed and has inverse-square magnitude:
+\begin{equation}
+  \mathbf a_F(r) = -\mu\,\frac{\mathbf r}{r^3},
+  \qquad
+  \mu=\frac{L^2 a}{b^2}=\frac{L^2}{p},
+\end{equation}
+where $p=b^2/a$ is the semi-latus rectum and $\mathbf r$ is the position vector from $F$.
+\end{proposition}
+\begin{proof}
+From \Cref{lem:matching-drops} and the sagitta estimate above,
 \[
   BD\sim B_0D_0\sim \frac{L^2 a}{2 b^2 r^2}\,t^2.
 \]
@@ -143,30 +154,16 @@ Therefore
   \qquad \left(p=\frac{b^2}{a}\right).
 \]
 Applying \Cref{lem:bd-over-br2} with $c=\frac{1}{2p}$ gives
-\begin{equation}
+\[
   a_F=\frac{2cL^2}{r^2}
   =\frac{L^2}{p}\cdot\frac{1}{r^2}
   =\frac{L^2 a}{b^2}\cdot\frac{1}{r^2}.
-\end{equation}
-
-Together with Section~2 (direction toward $F$), we obtain the inverse-square central law:
-\begin{equation}
-  \boxed{\;\mathbf a_F(r) = -\mu\,\frac{\mathbf r}{r^3},\qquad \mu=\frac{L^2 a}{b^2}\;}
-\end{equation}
-where $\mathbf r$ is the position vector from $F$.
-
-Using the ellipse identity $p=b^2/a$ (the \emph{semi-latus rectum}), this can be written in the standard Newtonian form
-\begin{equation}
-  \mu=\frac{L^2}{p},\qquad \mathbf a = -\frac{L^2}{p}\,\frac{\mathbf r}{r^3}.
-\end{equation}
-Here $\mu$ is a single positive constant, commonly called the \emph{standard gravitational parameter}; in the usual physical notation one writes $\mu=GM$ (cf. \cite{chandrasekhar1995principia,goodstein1996feynman}).
-
-This also makes explicit how the \emph{shape} of the ellipse and the constant areal rate determine the physical parameter. Since $L=2k$ and $\mu=L^2/p$, we have
-\begin{equation}
-  \mu = \frac{(2k)^2}{p} = \frac{4k^2}{p}.
-\end{equation}
-Writing the semi-latus rectum as $p=b^2/a=a(1-e^2)$, this becomes
-\begin{equation}
-  \mu = \frac{L^2}{a(1-e^2)}.
-\end{equation}
-Equivalently, for a given inverse-square strength $\mu=GM$ and ellipse parameter $p$, the area-law constant is fixed by $k=\tfrac12\sqrt{\mu p}$ (so the orbit's geometry and the gravitating mass together determine the swept-area rate).
+\]
+Combining this magnitude with Section~3's central-direction conclusion yields
+\[
+  \mathbf a_F(r) = -\mu\,\frac{\mathbf r}{r^3},
+  \qquad
+  \mu=\frac{L^2a}{b^2}=\frac{L^2}{p}.
+\]
+For the areal constant $k$ with $L=2k$, this is equivalently $\mu=4k^2/p$.
+\end{proof}

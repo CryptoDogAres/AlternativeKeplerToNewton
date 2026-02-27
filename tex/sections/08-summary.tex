@@ -113,36 +113,32 @@ Define
 
 \begin{proposition}[Hodograph-radius analysis $\Rightarrow$ conic form]
 \label{prop:inverse-hodograph-proof}
-With the notation of \Cref{fig:inverse-problem}:
-\begin{enumerate}[label=(\roman*),leftmargin=*]
-  \item the hodograph of $\mathbf v$ is a circle of radius $u$ (hence the $\Delta t$-scaled hodograph circle has radius $u\Delta t$);
-  \item if the fixed shift satisfies $OR'=c\,\Delta t\cos\alpha$, then
-  \begin{equation}
-    \frac1r=\frac{k}{L^2}-\frac{c}{L}\cos\alpha
-    \quad\Longleftrightarrow\quad
-    r(\alpha)=\frac{p}{1-\varepsilon\cos\alpha},
-    \qquad
-    p=\frac{L^2}{k},
-    \quad
-    \varepsilon=\frac{cL}{k}=\frac{c}{u}.
-  \end{equation}
-  \item
-  \begin{equation}
-    \begin{aligned}
-      \frac{c}{u}<1,\;=1,\;>1
-      &\Longleftrightarrow
-      \text{velocity-origin inside/on/outside hodograph circle}\\
-      &\Longleftrightarrow
-      \text{ellipse/parabola/hyperbola}.
-    \end{aligned}
-  \end{equation}
-\end{enumerate}
+With the notation of \Cref{fig:inverse-problem}, the hodograph of $\mathbf v$ is a circle of radius $u$ (hence the $\Delta t$-scaled hodograph circle has radius $u\Delta t$). If the fixed shift satisfies $OR'=c\,\Delta t\cos\alpha$, then
+\begin{equation}
+  \frac1r=\frac{k}{L^2}-\frac{c}{L}\cos\alpha
+  \quad\Longleftrightarrow\quad
+  r(\alpha)=\frac{p}{1-\varepsilon\cos\alpha},
+  \qquad
+  p=\frac{L^2}{k},
+  \quad
+  \varepsilon=\frac{cL}{k}=\frac{c}{u}.
+\end{equation}
+Moreover,
+\begin{equation}
+  \begin{aligned}
+    \frac{c}{u}<1,\;=1,\;>1
+    &\Longleftrightarrow
+    \text{velocity-origin inside/on/outside hodograph circle}\\
+    &\Longleftrightarrow
+    \text{ellipse/parabola/hyperbola}.
+  \end{aligned}
+\end{equation}
 \end{proposition}
 
 \begin{proof}
 In \Cref{fig:inverse-problem}, the previous, current, and next velocities ($V_{A'},V_A,V_B$) are placed together in velocity space after scaling by $\Delta t$; this is exactly the translated $\Delta t$-scaled hodograph circle used in the relations below.
 
-\textbf{1) $\Delta v$ depends only on $\Delta\theta$.}
+First, $\Delta v$ depends only on $\Delta\theta$.
 Over a short interval $\Delta t$,
 \[
   \Delta v=a\,\Delta t=\frac{k}{r^2}\Delta t.
@@ -155,21 +151,21 @@ From $L=r^2\dot\theta$, one has $\Delta t=\frac{r^2}{L}\Delta\theta$. Hence
 \label{eq:inverse-step1}
 \end{equation}
 
-\textbf{2) Hodograph-circle conclusion.}
+Next, conclude the hodograph-circle radius.
 Because the force is central, $\Delta\mathbf v$ is radial inward. As $FA$ turns by $\Delta\theta$, the direction of $\Delta\mathbf v$ turns by the same $\Delta\theta$, while its magnitude is $u\,\Delta\theta$ by \eqref{eq:inverse-step1}. Thus the velocity-tip polygon is the equal-angle, equal-arc-length limit of an inscribed circle polygon, so the hodograph is a circle of radius $u$. Multiplying by $\Delta t$ gives
 \begin{equation}
   OM=u\,\Delta t.
 \label{eq:inverse-step2}
 \end{equation}
 
-\textbf{3) Tangential displacement.}
+Then, use tangential displacement.
 The tangential speed is $v_\theta=L/r$, hence
 \begin{equation}
   BR=v_\theta\Delta t=\frac{L}{r}\Delta t.
 \label{eq:inverse-step3}
 \end{equation}
 
-\textbf{4) Key geometry in the plot.}
+Now use the key geometry in the plot.
 From the translated-circle construction, $OM=MR'+OR'$ and $MR'=BR$, so
 \begin{equation}
   OM=BR+OR'.
@@ -200,6 +196,6 @@ This is equivalent to
   \varepsilon=\frac{cL}{k}=\frac{c}{u}.
 \]
 
-\textbf{5) Classification by origin position in velocity space.}
+Finally, classify by the origin position in velocity space.
 The hodograph circle has radius $u$, and the velocity-origin offset has magnitude $c$. Hence the origin is inside/on/outside the hodograph circle according as $c<u$, $c=u$, $c>u$, i.e. $c/u<1,=1,>1$. Since $\varepsilon=c/u$, these are precisely $\varepsilon<1,=1,>1$, giving ellipse/parabola/hyperbola.
 \end{proof}

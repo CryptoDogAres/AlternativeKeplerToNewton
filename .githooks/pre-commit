@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Allow bypass for emergency commits.
+if [ "${SKIP_README_CHECK:-0}" = "1" ]; then
+  exit 0
+fi
+
+# Skip merge commits.
+if git rev-parse -q --verify MERGE_HEAD >/dev/null 2>&1; then
+  exit 0
+fi
+
+staged_files="$(git diff --cached --name-only --diff-filter=ACMR)"
+
+# Nothing staged: nothing to validate.
+if [ -z "$staged_files" ]; then
+  exit 0
+fi
+
+if printf '%s\n' "$staged_files" | grep -Eiq '^(README\.md|readme\.md)$'; then
+  exit 0
+fi
+
+echo "[pre-commit] README update required."
+echo "Staged files:"
+printf '%s\n' "$staged_files" | sed 's/^/  - /'
+echo ""
+echo "Stage README before committing, or bypass once with: SKIP_README_CHECK=1 git commit ..."
+exit 1
