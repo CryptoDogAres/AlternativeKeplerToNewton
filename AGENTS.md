@@ -9,6 +9,7 @@ A skill is a set of local instructions stored in a `SKILL.md` file.
 - rebuild-latex-pdf: Rebuild LaTeX PDFs after `.tex` updates with repeated compile verification and failure handling. (file: `/Users/changchunshi/codebase/AlternativeKeplerToNewton/.codex/skills/rebuild-latex-pdf/SKILL.md`)
 - reference-curator: Build and maintain per-reference summaries and a unique one-hop reference index in `refs/summaries/`. (file: `/Users/changchunshi/codebase/AlternativeKeplerToNewton/.codex/skills/reference-curator/SKILL.md`)
 - proofread-reference-audit: Proofread writing for grammar, factual consistency, and citation correctness, then suggest additional references. (file: `/Users/changchunshi/codebase/AlternativeKeplerToNewton/.codex/skills/proofread-reference-audit/SKILL.md`)
+- gitpush: Stage, commit, and push all pending repository changes in one flow, including untracked and deleted files, with optional re-push verification. (file: `/Users/changchunshi/codebase/AlternativeKeplerToNewton/.codex/skills/gitpush/SKILL.md`)
 
 ### How to use skills
 

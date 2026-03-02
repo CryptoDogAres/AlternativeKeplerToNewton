@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Push"
+  short_description: "Stage, commit, and push all pending repo changes."
+  default_prompt: "Use $gitpush to stage all changes, create one commit, push to origin, and verify the remote is up to date."
