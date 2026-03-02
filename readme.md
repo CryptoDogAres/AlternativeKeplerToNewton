@@ -24,6 +24,8 @@ The paper develops a synthetic treatment of:
 - `bib/references.bib`: active bibliography database
 - `bib/archive/references_2.bib`: archived bibliography file
 - `refs/pdf/`: external reference PDFs used during drafting
+- `refs/summaries/`: per-reference summaries and one-hop reference index
+- `.codex/skills/`: project-local Codex skills used for maintenance workflows
 
 ## Build
 
@@ -41,3 +43,11 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 ```
+
+## Project skills
+
+This project ships with local Codex skills in `.codex/skills/`:
+
+- `rebuild-latex-pdf`: iterative LaTeX build/rebuild workflow with stability checks.
+- `reference-curator`: maintain per-reference summaries and a unique one-hop references index in `refs/summaries/`.
+- `proofread-reference-audit`: proofread grammar/facts/citations and suggest additional references (prioritizing one-hop candidates).

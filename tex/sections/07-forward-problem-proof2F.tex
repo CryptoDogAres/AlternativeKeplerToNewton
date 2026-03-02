@@ -1,0 +1,318 @@
+% !TEX root = ../../main.tex
+\section{Forward Problem: Proof 2F}
+\label{sec:forward-problem-proof2f}
+
+We again start from the forward-problem assumption: a centripetal inverse-square law $a_F\propto 1/r^2$.
+By Section~\ref{sec:forward-problem-hodograph}, this implies a circular hodograph in velocity space.
+This section presents a second route, using that hodograph-circle nature directly through rotated/scaled auxiliary circles.
+As in earlier sections, we intentionally over-scribe assisting lines so readers can spot more angle and length relations at a glance.
+For each conic, a simpler base shape is enough for a minimal proof, but the enriched diagram exposes multiple valid relation chains.
+In the subsections below we highlight several such chains so readers can develop alternative proof techniques from the same geometric idea.
+
+\subsection{Ellipse: Forward Problem Proof 2F}
+\label{subsec:ellipse-proof2f}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{assets/images/ellipse_proof2F.png}
+  \caption{Ellipse configuration for Forward Problem Proof~2F.}
+  \label{fig:ellipse-proof2f}
+\end{figure}
+
+Using \Cref{fig:ellipse-proof2f}, we set up the elliptic Forward Problem Proof~2F in the circle-to-orbit framework.
+
+\begin{proposition}[Forward Problem Proof~2F: ellipse case]
+Assume inverse-square centripetal attraction, so the hodograph is a circle. If the velocity origin lies inside that hodograph circle, then the orbit is an ellipse.
+\end{proposition}
+
+\begin{proof}
+Start with the hodograph circle of radius $u$. Rotate it by $90^\circ$ and scale by $b^2/L$, where $L$ is the specific angular momentum (twice areal speed, fixed by central-force motion from Section~2). Denote the scaled circle by $\mathcal C$ with center $O$, radius $a$, and
+\[
+  OF=:c,
+  \qquad
+  a=\frac{b^2}{L}u.
+\]
+Let the line $OF$ meet $\mathcal C$ at $M'$ (near $F$) and $M$ (far from $F$). For any point $V\in\mathcal C$, let the line $VF$ meet $\mathcal C$ again at $H$.
+
+By the Euclidean power-of-a-point theorem (secant-secant form),
+\[
+  FM'\cdot FM = FV\cdot FH = (a-c)(a+c)=a^2-c^2.
+\]
+Write $FH=:d$ and, from the chosen scaling, $FV=\frac{b^2}{L}v$; then
+\[
+  a^2-c^2=\frac{b^2}{L}\,v\,d.
+\]
+Choose the scale parameter so that
+\[
+  b^2=a^2-c^2.
+\]
+Hence $v\,d=L$. Therefore, the point where the true velocity line (perpendicular to $FH$) meets the tangent line $t_A$ is exactly the constructed point $H$.
+
+Now draw $t_A$ through $H$ perpendicular to $FH$, and let $V'$ be the second intersection of $t_A$ with $\mathcal C$. Since $\angle VHV'=90^\circ$, $VV'$ is a diameter of $\mathcal C$, so $O\in VV'$. Draw through $V'$ the line perpendicular to $HV'$ and let it meet $OF$ at $F'$. Then $F'V'\parallel VH$, and the corresponding triangles give
+\[
+  F'V'=FV=\frac{b^2}{L}v,
+  \qquad
+  OF'=OF=c.
+\]
+So $F'$ is uniquely determined as the reflection of $F$ across $O$, independent of the choice of $V$.
+
+To locate the orbital point $A$ on $t_A$, use direction information: $OV$ is normal to $\mathcal C$ at $V$, hence normal to the local tangent proxy, so it is parallel to the acceleration direction. Because the force is centripetal, this gives
+\[
+  AF\parallel V'V.
+\]
+Let $A'=FA\cap F'V'$. Since $AF\parallel V'V$ and $O\in V'V$, we have $OV'\parallel FA'$. In $\triangle FF'A'$, $O$ is the midpoint of $FF'$ and $OV'\parallel FA'$, so $V'$ is the midpoint of $F'A'$. Therefore
+\[
+  FA'=2\,OV'=2a.
+\]
+Also, $A,V'\in t_A$, while $A'F'$ is collinear with $F'V'$ and $F'V'\perp t_A$; hence $AV'\perp A'F'$. Since $V'$ is the midpoint of $A'F'$, the line $AV'$ is the perpendicular bisector of $A'F'$. Therefore
+\[
+  AA'=AF',
+  \qquad
+  \angle V'AF'=\angle V'AA'.
+\]
+This is the reflection characterization at $A$ across the tangent line $t_A$. Combining $AA'=AF'$ with the distance relation above gives
+\[
+  AF+AF' = AF+AA' = FA' = 2a.
+\]
+This is the gardener characterization of an ellipse (constant sum of distances to two fixed foci), with foci $F,F'$. Therefore, when the velocity origin is inside the hodograph circle, the orbit is elliptic.
+\end{proof}
+
+\paragraph{Alternative closing step without constructing \(A'\): ellipse proof 2F'.}
+One may branch from the step \(AF\parallel V'V\) (just before introducing \(A'\)). Define
+\[
+  r:=FA,
+  \qquad
+  r':=F'A.
+\]
+Draw \(F'F''\parallel t_A\) and let it meet \(FA\) at \(F''\). Draw \(OO''\parallel t_A\) and let it meet \(FA\) at \(O''\) (on the branch from \(F\) to \(A\)).
+
+Since \(O\in V'V\), the relation \(AF\parallel V'V\) implies \(AF\parallel OV'\). Also \(OO''\parallel t_A\parallel AV'\). Hence \(O''AV'O\) is a parallelogram, so
+\[
+  O''A=OV'=a,
+\]
+where \(OV'=a\) is the radius definition of \(\mathcal C\). Therefore
+\[
+  FO''=FA-O''A=r-a.
+\]
+In \(\triangle FF'F''\), \(O\) is the midpoint of \(FF'\), and \(OO''\parallel F'F''\); hence \(O''\) is the midpoint of \(FF''\), so
+\[
+  FF''=2\,FO''=2(r-a).
+\]
+Thus
+\[
+  AF''=AF-FF''=r-2(r-a)=2a-r.
+\]
+
+The reflection-angle relation at \(A\) used above can then be established via the right-triangle similarity \(\triangle AHF\sim\triangle AV'F'\), since \(V'F':FH=VF:FH=AV':AH\). Set
+\[
+  \angle FAH=\angle F'AV'=: \alpha.
+\]
+Because \(F'F''\parallel t_A\) and \(AV'\subset t_A\),
+\[
+  \angle AF''F'=\angle FAH=\alpha,
+  \qquad
+  \angle AF'F''=\angle F'AV'=\alpha.
+\]
+Hence \(\triangle AF'F''\) is isosceles, so \(AF''=AF'=r'\). Combining with \(AF''=2a-r\), we get
+\[
+  r'=2a-r
+  \quad\Longrightarrow\quad
+  r+r'=2a.
+\]
+This is exactly the gardener characterization of an ellipse, completing the same conclusion without constructing \(A'\), i.e., the alternative ellipse Proof~2F'.
+
+\subsection{Hyperbola: Forward Problem Proof 2F}
+\label{subsec:hyperbola-proof2f}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{assets/images/hyperbola_proof2F1.png}
+  \caption{Hyperbola configuration for Forward Problem Proof~2F.}
+  \label{fig:hyperbola-proof2f}
+\end{figure}
+
+Using \Cref{fig:hyperbola-proof2f}, we set up the hyperbolic counterpart with the same hodograph-circle logic and branch-sign adjustments.
+
+\begin{proposition}[Forward Problem Proof~2F: hyperbola case]
+Assume inverse-square centripetal attraction, so the hodograph is a circle. If the velocity origin lies outside that hodograph circle, then the orbit is a hyperbola.
+\end{proposition}
+
+\begin{proof}
+This proof is almost the same as the elliptic proof in \Cref{subsec:ellipse-proof2f}; the same is true for the alternative proof below. The only essential normalization change is
+\[
+  b^2=c^2-a^2,
+\]
+which is the hyperbolic identity that matches the rotated/scaled hodograph circle \(\mathcal C\) to the orbit geometry.
+
+With \(OF=c\), \(FV=\frac{b^2}{L}v\), and \(FH=d\), the secant product gives
+\[
+  FM'\cdot FM=FV\cdot FH=(c-a)(c+a)=c^2-a^2=b^2,
+\]
+hence \(vd=L\). So the tangent-placement step and the constructions of \(V'\) and \(F'\) proceed exactly as in the ellipse case.
+
+Now set \(r:=AF\) and \(r':=AF'\), and define \(A':=FA\cap F'V'\). The midpoint argument in \(\triangle FF'A'\) is unchanged, yielding
+\[
+  FA'=2a=V'V.
+\]
+The reflection property at \(A\) is also unchanged, so \(AA'=AF'=r'\). On the chosen branch (\(A,F,A'\) collinear with \(F\) between \(A\) and \(A'\)),
+\[
+  r'-r = AA'-AF = FA' = 2a.
+\]
+This is the gardener characterization of a hyperbola (\(\lvert AF'-AF\rvert=2a\)) with foci \(F,F'\). The remaining line-by-line details are parallel to \Cref{subsec:ellipse-proof2f}.
+\end{proof}
+
+\paragraph{Alternative closing step (hyperbola Proof~2F').}
+The alternative closure from ellipse Proof~2F' transfers directly, with one branch change: construct \(F''\) and \(O''\) on the ray \(FA\) beyond \(A\) (rather than on the segment \(FA\)). Draw \(F'F''\parallel t_A\) and \(OO''\parallel t_A\), meeting the ray \(FA\) at \(F''\) and \(O''\), respectively.
+
+Then \(O''A=OV'=a\), so
+\[
+  FO''=FA+AO''=r+a.
+\]
+As before, \(O\) is the midpoint of \(FF'\), and \(OO''\parallel F'F''\), so \(O''\) is the midpoint of \(FF''\). Hence
+\[
+  FF''=2(r+a),
+  \qquad
+  AF''=FF''-AF=r+2a.
+\]
+The same reflection-angle argument gives \(AF''=AF'=r'\). Therefore
+\[
+  r'=r+2a
+  \quad\Longleftrightarrow\quad
+  r'-r=2a.
+\]
+Again, the remaining details are routine parallels of the elliptic case.
+
+\paragraph{Swapped-focus centrifugal variant.}
+The centrifugal-force version follows almost exactly as well. In \Cref{fig:hyperbola-proof2f}, swap the names \(F\leftrightarrow F'\), rename the current \(V'\) as \(H\), and let the line through the new \(F'\) and \(H\) meet \(\mathcal C\) again at the new \(V\). After this relabeling, the rest of the construction and proof chain is sequentially identical, so we omit repetitive details.
+
+\subsection{Parabola: Forward Problem Proof 2F}
+\label{subsec:parabola-proof2f}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{assets/images/parabola_proof2F.png}
+  \caption{Parabola configuration for Forward Problem Proof~2F.}
+  \label{fig:parabola-proof2f}
+\end{figure}
+
+Using \Cref{fig:parabola-proof2f}, we set up the parabolic threshold case in the same proof family.
+
+\begin{proposition}[Forward Problem Proof~2F: parabola case]
+Assume inverse-square centripetal attraction, so the hodograph is a circle. If the velocity origin lies on that hodograph circle, then the orbit is a parabola.
+\end{proposition}
+
+\begin{proof}
+As in the previous two subsections, rotate the hodograph by \(90^\circ\), but now scale by \(a^2/L\). In the parabola configuration of \Cref{fig:parabola-proof2f}, the corresponding point \(H\) lies on the fixed line \(\mathcal A\), where \(\mathcal A\perp FM\) and \(FM\) is the diameter of the scaled hodograph circle \(\mathcal C_1\).
+
+For \(V\in\mathcal C_1\), let \(H=VF\cap\mathcal A\). Since \(\triangle MVF\) and \(\triangle HMF\) are right triangles with a common acute angle at \(F\) (because \(V,H,F\) are collinear), they are similar. Hence
+\[
+  FV\cdot FH=MF^2=a^2.
+\]
+Using the areal relation \(v\cdot FH=L\), we obtain
+\[
+  FV=\frac{a^2}{L}\,v,
+\]
+which is the parabolic analogue of the elliptic/hyperbolic scaling formulas.
+
+Now draw \(t_A\) through \(H\) perpendicular to \(FH\). The orbital point for this \(V\) is
+\[
+  A:=t_A\cap\{\text{line through }F\text{ parallel to }OV\},
+\]
+from the same centripetal-direction argument used above.
+
+Let \(T_A:=t_A\cap \overrightarrow{FM}\). Since \(MV\perp VF\) and \(t_A\perp VF\), we have \(MV\parallel AT_A\). Also \(OV\parallel AF\) and \(MO\parallel FT_A\), so \(\triangle A T_A F\sim\triangle VMO\). Therefore the tangent-bisector (reflection) relation is the same as before: the tangent at \(A\) bisects the angle between the focus ray \(AF\) and the fixed direction parallel to \(FM\).
+
+For the directrix closure, draw through \(A\) the line perpendicular to \(\mathcal A\), and let it meet \(\mathcal A\) at \(A''\). By definition \(AF=r\). With the same parallel-line relations,
+\[
+  AA''=T_A M=F T_A-F M=F A-a=r-a.
+\]
+Now let \(\mathcal D\parallel\mathcal A\) meet the ray \(FM\) at \(N\) with \(NM=a\). Define \(A'\) as the intersection of ray \(AA''\) with \(\mathcal D\). Then
+\[
+  AA'=AA''+a=(r-a)+a=r=AF.
+\]
+Thus the distance to the focus equals the distance to the directrix, which is exactly the defining property of a parabola. (In the plotted construction, \(A',H,F\) are collinear; equivalently, one may define \(A'\) via \(FH\cap\mathcal D\) and verify \(AA'\parallel FM\).) The remaining routine checks are left to the reader.
+\end{proof}
+
+\paragraph{Alternative scaled-circle variant.}
+The same conclusion can also be constructed with the auxiliary circle \(\mathcal C_2\) shown in \Cref{fig:parabola-proof2f}, corresponding to a \(2a^2/L\) hodograph scaling. As in the ellipse and hyperbola cases, choosing a different but equivalent hodograph proxy changes only intermediate geometric details, not the final parabolic conclusion.
+
+\subsection{Discussion}
+\label{subsec:proof2f-discussion}
+
+Across the ellipse, hyperbola, and parabola cases, Proof~2F and its variants follow one common four-step template. First, rotate and scale the hodograph circle to obtain a geometric proxy in configuration space (with conic-dependent scale choices). Second, combine the secant/product identity with the areal invariant \(L\) so that the tangent carrier \(t_A\) is fixed by the constructed point \(H\). Third, recover the force-center direction by imposing the parallel condition \(AF\parallel OV\), which determines the orbit point on \(t_A\). Fourth, identify the conic through an invariant second focus (ellipse/hyperbola) or invariant directrix (parabola), together with the reflection and gardener/directrix characterization.
+
+This auxiliary-circle framing, imported from the inverse-problem side, gives a concrete pointwise forward construction: each proxy point \(V\) determines a unique orbital point \(A\), rather than relying on a tangent-envelope argument. In this sense, the geometric map from hodograph data to orbit position is explicit at every step.
+
+The same framework also connects cleanly to physical parameters. With inverse-square parameter \(\mu\) and specific angular momentum \(L\), Section~6.1.2 gives the hodograph radius
+\[
+  u=\frac{\mu}{L}.
+\]
+Equivalently, the semi-latus rectum is
+\[
+  p:=\frac{L^2}{\mu}.
+\]
+For ellipse and hyperbola (where \(a,b\) are the usual semi-axis parameters), \(p=b^2/a\), hence
+\[
+  b^2=a\,p.
+\]
+For parabola (\(e=1\)), the semi-axis pair \((a,b)\) is replaced by the focus--directrix parameterization. In the notation of \Cref{subsec:parabola-proof2f} (where \(a:=MF\)),
+\[
+  p=2a=\frac{L^2}{\mu},
+  \qquad
+  a=\frac{L^2}{2\mu}.
+\]
+
+Finally, the orbit is fully determined by initial constants: inverse-square parameter \(\mu\), specific angular momentum \(L\), and one initial orbit point at radius \(r_0\), together with the initial moment arm (areal lever arm)
+\[
+  d_0:=FH_0.
+\]
+Equivalently, \(v_0d_0=L\). Also recall
+\[
+  \kappa:=\lim\!\left(\frac{BD}{BR^2}\right),
+\]
+the sagitta--chord constant from the local ultimate-ratio step in Section~2. Since \(\mu=2\kappa L^2\) and \(p=L^2/\mu\), we have
+\[
+  \kappa=\frac{1}{2p}.
+\]
+Thus a local limit ratio equals a global conic parameter. Compute
+\[
+  p=\frac{L^2}{\mu}.
+\]
+Eccentricity is introduced geometrically from the construction: \(e=c/a\) for ellipse/hyperbola, and \(e=1\) for parabola. At the same initial point \(A_0\), use \(v_0=L/d_0\) and
+\[
+  v_{r0}^2=v_0^2-\left(\frac{L}{r_0}\right)^2
+  =L^2\!\left(\frac{1}{d_0^2}-\frac{1}{r_0^2}\right).
+\]
+From \(r=p/(1-e\cos\alpha)\), one has \(e\cos\alpha_0=1-p/r_0\), and the standard Kepler kinematic projection gives
+\[
+  e\sin\alpha_0=\frac{p}{L}\,v_{r0}.
+\]
+Therefore
+\[
+  e^2
+  =\left(1-\frac{p}{r_0}\right)^2
+   +\frac{p^2}{L^2}v_{r0}^2
+  =1+\frac{p^2}{d_0^2}-\frac{2p}{r_0}.
+\]
+If one defines the initial specific-energy expression
+\[
+  \mathcal E_0:=\frac{L^2}{2d_0^2}-\frac{\mu}{r_0},
+\]
+then this is equivalently
+\[
+  e=\sqrt{1+\frac{2\mathcal E_0L^2}{\mu^2}}
+  =\sqrt{1+\frac{p^2}{d_0^2}-\frac{2p}{r_0}}.
+\]
+Here \(p\) is the semi-latus rectum and \(e\) is the eccentricity. Then all remaining conic parameters follow:
+\[
+  \begin{array}{ll}
+  e<1\ (\text{ellipse}): & a=\dfrac{p}{1-e^2},\quad b^2=ap,\quad c=ae,\\[4pt]
+  e=1\ (\text{parabola}): & p=2a\ \text{(with \(a=MF\) in \Cref{subsec:parabola-proof2f})},\\[4pt]
+  e>1\ (\text{hyperbola}): & a=\dfrac{p}{e^2-1},\quad b^2=ap,\quad c=ae.
+  \end{array}
+\]
+Using \(\mu=2\kappa L^2\), the same eccentricity can also be written as
+\[
+  e=\sqrt{1+\frac{\mathcal E_0}{2\kappa^2L^2}}.
+\]
+So the geometric scale relations in Proof~2F can be read directly in terms of conserved dynamical quantities.

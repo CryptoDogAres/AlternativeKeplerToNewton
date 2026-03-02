@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Curator"
+  short_description: "Maintain reference summaries and first-order citation lists."
+  default_prompt: "Use $reference-curator to create or refresh a reference summary and update the one-hop citation index."

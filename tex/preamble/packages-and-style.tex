@@ -9,6 +9,7 @@
 
 % Math
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{aliascnt}
 \usepackage{mathtools}
 \providecommand{\wideparen}[1]{\overset{\frown}{#1}}
 % Number equations by section: (section.eq)
@@ -33,17 +34,51 @@
 \usepackage{url}
 \usepackage{doi}
 \urlstyle{same}
+% Improve long-URL line breaking (especially in bibliography).
+\Urlmuskip=0mu plus 2mu
+\def\UrlBreaks{\do\/\do-\do\_\do\.\do\?\do\&\do\#}
+
+% Keep bibliography from full-justification stretching on long URL entries.
+\usepackage{etoolbox}
+\AtBeginEnvironment{thebibliography}{%
+  \raggedright
+  \sloppy
+}
 
 % Theorem environments (adjust to taste)
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
+\newaliascnt{definition}{theorem}
+\newtheorem{definition}[definition]{Definition}
+\aliascntresetthe{definition}
 \theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
+\newaliascnt{remark}{theorem}
+\newtheorem{remark}[remark]{Remark}
+\aliascntresetthe{remark}
+
+% Ensure cleveref prints the right environment name (not generic "theorem").
+\crefname{theorem}{theorem}{theorems}
+\Crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{lemma}{lemmas}
+\Crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{proposition}{propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+\crefname{corollary}{corollary}{corollaries}
+\Crefname{corollary}{Corollary}{Corollaries}
+\crefname{definition}{definition}{definitions}
+\Crefname{definition}{Definition}{Definitions}
+\crefname{remark}{remark}{remarks}
+\Crefname{remark}{Remark}{Remarks}
 
 % Paragraph style
 \setlength{\parindent}{0pt}

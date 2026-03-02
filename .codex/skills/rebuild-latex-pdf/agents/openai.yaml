@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rebuild LaTeX PDF"
+  short_description: "Iteratively rebuild PDF after TeX file updates."
+  default_prompt: "Use $rebuild-latex-pdf to rebuild and verify a LaTeX PDF after TeX changes."

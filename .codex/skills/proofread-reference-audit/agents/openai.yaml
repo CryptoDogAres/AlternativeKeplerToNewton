@@ -1,0 +1,4 @@
+interface:
+  display_name: "Proofread Reference Audit"
+  short_description: "Proofread grammar, facts, and references."
+  default_prompt: "Use $proofread-reference-audit to proofread a draft, verify citations, and suggest additional references."
