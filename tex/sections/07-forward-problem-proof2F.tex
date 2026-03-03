@@ -20,7 +20,7 @@ Throughout this section, whenever the scale factors \(b^2/L\) (ellipse/hyperbola
   \label{fig:ellipse-proof2f}
 \end{figure}
 
-Using \Cref{fig:ellipse-proof2f}, we set up the elliptic Forward Problem Proof~2F in the circle-to-orbit framework.
+Using \Cref{fig:ellipse-proof2f}, we set up Forward Problem Proof~2F for the ellipse case in the circle-to-orbit framework.
 In this subsection we also use the standard elliptic identity for the semi-latus rectum \(p\): geometrically, \(p\) is the perpendicular distance from the force center \(F\) to the orbit along the line through \(F\) orthogonal to the major axis. In \((a,b,c)\) notation,
 \begin{equation}
   p^2+(2c)^2=(2a-p)^2
@@ -34,11 +34,11 @@ Assume inverse-square centripetal attraction, so the hodograph is a circle. If t
 \end{proposition}
 
 \begin{proof}
-Start with the hodograph circle of radius $u$. Rotate it counterclockwise by $90^\circ$ and scale by $b^2/L$, where \(b\) is a length parameter left undetermined at this stage, and \(L\) is the specific angular momentum (twice areal speed, fixed by central-force motion from Section~2; later \(a,b,c\) are expressed from initial data in \Cref{eq:proof2f-disc-shodo-u-E0,eq:proof2f-disc-abc-from-initial}). Denote the scaled circle by $\mathcal C$ with center $O$, radius $a$, and
+Start with the hodograph circle of radius $u$. Rotate it counterclockwise by $90^\circ$ and scale by \(\beta/L\), where \(\beta\) is a length-squared parameter left undetermined at this stage, and \(L\) is the specific angular momentum (twice areal speed, fixed by central-force motion from Section~2; later \(\beta\) is fixed to \(b^2\), and \(a,b,c\) are expressed from initial data in \Cref{eq:proof2f-disc-shodo-u-E0,eq:proof2f-disc-abc-from-initial}). Denote the scaled circle by $\mathcal C$ with center $O$, radius $a$, and
 \[
   OF=:c,
   \qquad
-  a=\frac{b^2}{L}u.
+  a=\frac{\beta}{L}u.
 \]
 Let the line $OF$ meet $\mathcal C$ at $M'$ (near $F$) and $M$ (far from $F$). For any point $V\in\mathcal C$, let the line $VF$ meet $\mathcal C$ again at $H$.
 
@@ -46,13 +46,17 @@ By the Euclidean power-of-a-point theorem (secant-secant form),
 \[
   FM'\cdot FM = FV\cdot FH = (a-c)(a+c)=a^2-c^2.
 \]
-Write $FH=:d$ and, from the chosen scaling, $FV=\frac{b^2}{L}v$; then
+Write $FH=:d$ and, from the chosen scaling, $FV=\frac{\beta}{L}v$; then
 \[
-  a^2-c^2=\frac{b^2}{L}\,v\,d.
+  a^2-c^2=\frac{\beta}{L}\,v\,d.
 \]
-Choose the scale parameter so that
+Now choose the normalization
 \[
-  b^2=a^2-c^2.
+  \beta:=a^2-c^2.
+\]
+For the ellipse case we denote this positive quantity by
+\[
+  b^2:=a^2-c^2.
 \]
 Hence $v\,d=L$. Therefore, the point where the true velocity line (perpendicular to $FH$) meets the tangent line $t_A$ is exactly the constructed point $H$.
 
@@ -131,6 +135,31 @@ Hence \(\triangle AF'F''\) is isosceles, so \(AF''=AF'=r'\). Combining with \(AF
 This is exactly the gardener characterization of an ellipse, completing the same conclusion without constructing \(A'\), i.e., the alternative ellipse Proof~2F'.
 \end{proof}
 
+\paragraph{Alternative polar-form closure (ellipse Proof~2F'').}
+\begin{proof}[Alternative proof (ellipse 2F''): polar-form closure]
+As an alternative closure of \Cref{subsec:ellipse-proof2f}, we verify directly that the constructed orbit obeys the ellipse polar formula (\Cref{eq:proof1f-r-alpha}). Let \(V\) denote the point on \(\mathcal C\) whose radius satisfies \(OV\parallel AF\) (in the present construction). Drop the perpendicular from \(F\) to the line \(OV\), and call the foot \(N\). Then \(N\in OV\), so
+\[
+  VN=OV-ON=a-c\cos\angle OFA.
+\]
+
+Now use \(\triangle VNF\sim\triangle AHF\), hence
+\[
+  \frac{VF}{FA}=\frac{VN}{FH}
+  \quad\Longrightarrow\quad
+  VF\cdot FH=VN\cdot FA.
+\]
+With \(FA=r\) and \(VF\cdot FH=b^2\), this gives \(VN=b^2/r\). Therefore
+\begin{equation}
+  \frac{b^2}{r}=a-c\cos\angle OFA=VN.
+\label{eq:ellipse-vn-polar-geom}
+\end{equation}
+Equivalently,
+\[
+  r=\frac{b^2}{a-c\cos\angle OFA}.
+\]
+This is the geometric meaning of the polar ellipse relation in this construction. Analogous identities exist for hyperbola and parabola, but we do not detail them here.
+\end{proof}
+
 At this stage, the orbit is parameterized geometrically by \((a,b,c)\). Its physical determination, however, is by dynamical data: the force-law constant and the initial state \((\mathbf r_0,\mathbf v_0)\) (equivalently \(r_0,v_0\) with direction, or \(r_0,d_0,v_0\)). We defer this equivalence intentionally to \Cref{subsec:proof2f-discussion}. The reason is organizational: we first complete the same hodograph/force-center construction logic for hyperbola and parabola in \Cref{subsec:hyperbola-proof2f,subsec:parabola-proof2f}, then present one unified parameter map for all cases in \Cref{subsec:proof2f-discussion}.
 
 \subsection{Hyperbola: Forward Problem Proof 2F}
@@ -150,9 +179,9 @@ Assume inverse-square centripetal attraction, so the hodograph is a circle. If t
 \end{proposition}
 
 \begin{proof}
-This proof is almost the same as the elliptic proof in \Cref{subsec:ellipse-proof2f}; the same is true for the alternative proof below. The only essential normalization change is
+This proof is almost the same as the elliptic proof in \Cref{subsec:ellipse-proof2f}; the same is true for the alternative proof below. Using the same \(\beta/L\)-scaling template, the only essential normalization change is
 \[
-  b^2=c^2-a^2,
+  \beta=b^2=c^2-a^2,
 \]
 which is the hyperbolic identity that matches the rotated/scaled hodograph circle \(\mathcal C\) to the orbit geometry (and the same \(b^2/L\) scale can be rewritten from initial data as in \Cref{subsec:proof2f-discussion}).
 
@@ -194,6 +223,11 @@ The same reflection-angle argument gives \(AF''=AF'=r'\). Therefore
   r'-r=2a.
 \]
 Again, the remaining details are routine parallels of the elliptic case.
+\end{proof}
+
+\paragraph{Alternative polar-form closure (hyperbola Proof~2F'').}
+\begin{proof}[Alternative proof (hyperbola 2F''): polar-form closure]
+This is the direct hyperbolic counterpart of ellipse Proof~2F'' in \Cref{subsec:ellipse-proof2f}. Draw the perpendicular from \(F\) to the line \(VO\), and call the foot \(N\); then use the segment \(VN\). With the same similarity step (\(\triangle VNF\sim\triangle AHF\)) and the same secant-product step, the derivation translates letter-for-letter from the ellipse case, with the hyperbolic normalization \(b^2=c^2-a^2\) and directed-segment sign convention on the chosen branch. Hence the same polar-form closure follows in this notation.
 \end{proof}
 
 \paragraph{Swapped-focus centrifugal variant.}
@@ -256,10 +290,26 @@ Thus the distance to the focus equals the distance to the directrix, which is ex
 The same conclusion can also be constructed with the auxiliary circle \(\mathcal C_2\) shown in \Cref{fig:parabola-proof2f}, corresponding to a \(2a^2/L\) hodograph scaling (again reducible to initial data as in \Cref{subsec:proof2f-discussion}). As in the ellipse and hyperbola cases, choosing a different but equivalent hodograph proxy changes only intermediate geometric details, not the final parabolic conclusion.
 \end{proof}
 
+Alternative polar-form closure (parabola Proof~2F'') in parabola is trivial and equivalent to the directrix closure. The same distance relation \(r=r\cos\beta+2a\) can be read directly from the diagram, where \(\beta\) is the angle between \(AF\) and the directrix direction \(FM\). This is the parabolic polar formula in this construction, with the same \(a^2/L\) scaling as before.
+
 Again, we postpone the explicit initial-condition parameter map to \Cref{subsec:proof2f-discussion}: this subsection first establishes the geometric mechanism that forces the parabolic form.
 
 \subsection{Discussion}
 \label{subsec:proof2f-discussion}
+
+\subsubsection{Rotation/Scaling Convention and Proxy Choice}
+
+This subsection takes CRS as the primary reference point for rotation/scaling conventions in hodograph-based constructions \cite{carinena2016newlook}.
+
+Before parameterizing by initial data, we clarify notation and conventions. Our Forward-Proof~2F scaling is not written exactly in the same normalization style as CRS. In CRS/CNS-style presentation, the scaling is often written as a signed factor tied to the energy sign (\(E<0\), \(E=0\), \(E>0\)), so negative scaling is allowed. Here we do not adopt that convention: we keep the geometric proxy radius positive (ellipse auxiliary circle \(\mathcal C\) has radius \(a\)) and encode orientation by rotation choice. The two conventions are equivalent and give the same geometric/dynamical results.
+
+As emphasized in \cite{gonzalezvillanueva1998circular}, one can even avoid this preprocessing entirely: no mandatory rescaling of the hodograph and no mandatory shift of the velocity origin to specially convenient centers (such as one of the foci) are required in principle, because perpendicular-and-parallel constructions can still recover the orbit. We do not emphasize that route here, since carefully chosen hodograph proxies in configuration space make the Euclidean argument shorter and more transparent. So these choices are not necessities, but geometric conveniences chosen for proof design. Nonetheless, for readers new to the topic, we find the auxiliary circle the most natural primary proxy; to our knowledge, using the auxiliary circle explicitly as the primary hodograph proxy has not been proposed in the literature, and we regard this framing as one contribution of this work.
+
+For ellipse, we take as the main convention a \(+90^\circ\) rotation in the same sense as orbital motion, followed by scaling to the auxiliary circle. An equivalent but less natural alternative is the \(-90^\circ\) transform with the empty focus convention. In the directrix-circle picture (radius \(2a\)), these two conventions appear as two corresponding transformed circles. This is one reason the auxiliary-circle proxy is algebraically cleaner in configuration space.
+
+For hyperbola, the same duality appears with center roles reversed: in our main convention, \(+90^\circ\) gives the empty-focus-centered proxy, while \(-90^\circ\) gives the force-center-shared speed-origin convention. This can appear as a reversed rotation sign relative to the hyperbola convention in \cite{carinena2016newlook}; the difference is convention-level, since that treatment allows negative scaling.
+
+For parabola, \(\Cref{fig:parabola-proof2}\) already exhibits multiple equivalent rotated-hodograph proxies. In the notation there, \(C_1,C_2,C_3,C_4\) may be read as \(-90^\circ\) proxy choices (with representative centers \(F,F,H,J\)); the dual \(+90^\circ\) reading corresponds to speed-origin placements \(M,N,M,N\), respectively. The figure does not explicitly draw all scaled velocity vectors for this second reading, but it leads to equivalent proofs with different intermediate Euclidean chains. Their radii \((a/2,\ a,\ a,\ 2a)\) produce different \(s_{\mathrm{hodo}}\) values. In this paper we take \(C_1\) as the main auxiliary proxy.
 
 \subsubsection{Initial-Data Parameterization}
 

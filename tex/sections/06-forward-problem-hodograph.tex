@@ -122,9 +122,9 @@ Define
 \begin{proposition}[Hodograph-radius analysis $\Rightarrow$ conic form]
 \label[proposition]{prop:inverse-hodograph-proof}
 With the notation of \Cref{fig:forward-problem}, the hodograph of $\mathbf v$ is a circle of radius $u$ (hence the $\Delta t$-scaled hodograph circle has radius $u\Delta t$). If the fixed shift is written directly in eccentricity form as
-\[
+\begin{equation}
   OR'=e\,u\,\Delta t\cos\alpha,
-\]
+\end{equation}
 then
 \begin{equation}
   \frac1r=\frac{\mu}{L^2}\left(1-e\cos\alpha\right)
@@ -134,6 +134,7 @@ then
   p=\frac{L^2}{\mu},
 \label{eq:proof1f-r-alpha}
 \end{equation}
+For a direct geometric interpretation of this polar form in the ellipse construction, see the discussion following \Cref{subsec:ellipse-proof2f}, especially \Cref{eq:ellipse-vn-polar-geom}.
 Moreover,
 \begin{equation}
   \begin{aligned}
@@ -152,9 +153,9 @@ In \Cref{fig:forward-problem}, the previous, current, and next velocities ($V_{A
 
 First, $\Delta v$ depends only on $\Delta\theta$.
 Over a short interval $\Delta t$,
-\[
+\begin{equation}
   \Delta v=a\,\Delta t=\frac{\mu}{r^2}\Delta t.
-\]
+\end{equation}
 From $L=r^2\dot\theta$, one has $\Delta t=\frac{r^2}{L}\Delta\theta$. Hence
 \begin{equation}
   \Delta v=\frac{\mu}{r^2}\cdot\frac{r^2}{L}\Delta\theta=\frac{\mu}{L}\Delta\theta=u\,\Delta\theta,
@@ -189,22 +190,22 @@ Assume
 \label{eq:inverse-step5}
 \end{equation}
 Substitute \eqref{eq:inverse-step2}, \eqref{eq:inverse-step3}, \eqref{eq:inverse-step5} into \eqref{eq:inverse-step4}:
-\[
+\begin{equation}
   u\Delta t=\frac{L}{r}\Delta t+e\,u\,\Delta t\cos\alpha.
-\]
+\end{equation}
 Cancel $\Delta t$:
-\[
+\begin{equation}
   u=\frac{L}{r}+e\,u\cos\alpha
   \quad\Longrightarrow\quad
   \frac1r=\frac{u}{L}\left(1-e\cos\alpha\right)
   =\frac{\mu}{L^2}\left(1-e\cos\alpha\right).
-\]
+\end{equation}
 This is equivalent to
-\[
+\begin{equation}
   r(\alpha)=\frac{p}{1-e\cos\alpha},
   \qquad
   p=\frac{L^2}{\mu},
-\]
+\end{equation}
 
 Finally, classify by the origin position in velocity space.
 The hodograph circle has radius $u$, and the velocity-origin offset has magnitude $eu$. Hence the origin is inside/on/outside the hodograph circle according as $eu<u$, $eu=u$, $eu>u$, i.e. $e<1,=1,>1$. These are precisely the ellipse/parabola/hyperbola regimes.
