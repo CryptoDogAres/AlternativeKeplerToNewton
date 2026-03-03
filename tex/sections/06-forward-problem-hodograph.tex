@@ -89,6 +89,8 @@ We take as given (from the historical discussion above) the hodograph-circle fac
 
 Our goal is to recover the orbit form $r(\theta)$ (forward problem) by a finite-step argument aligned with Newton's impulse-triangle logic, minimizing reliance on continuous calculus.
 
+In the next section, inspired by the geometric methods above, we give a forward-proof route based on explicit geometric construction. In the present section, however, we first take a slightly different approach: an infinitesimal hodograph analysis (Proof~1F).
+
 \subsubsection{Instantaneous view of Hodograph as Proof 1F}
 
 Assume planar motion under a centripetal acceleration toward $F$:
@@ -130,6 +132,7 @@ then
   r(\alpha)=\frac{p}{1-e\cos\alpha},
   \qquad
   p=\frac{L^2}{\mu},
+\label{eq:proof1f-r-alpha}
 \end{equation}
 Moreover,
 \begin{equation}
@@ -140,6 +143,7 @@ Moreover,
     &\Longleftrightarrow
     \text{ellipse/parabola/hyperbola}.
   \end{aligned}
+\label{eq:proof1f-regimes}
 \end{equation}
 \end{proposition}
 
@@ -205,4 +209,4 @@ This is equivalent to
 Finally, classify by the origin position in velocity space.
 The hodograph circle has radius $u$, and the velocity-origin offset has magnitude $eu$. Hence the origin is inside/on/outside the hodograph circle according as $eu<u$, $eu=u$, $eu>u$, i.e. $e<1,=1,>1$. These are precisely the ellipse/parabola/hyperbola regimes.
 \end{proof}
-This concludes the first forward-problem proof, which is a direct infinitesimal version of the hodograph construction. The second proof will be a discrete version of the same logic, more focusing on the Auxiliary circle geometry.
+This concludes the first forward-problem proof, which is a direct infinitesimal version of the hodograph construction. In the next section, the second proof follows a geometric insight similar to Feynman's Lost Lecture method, with stronger emphasis on the auxiliary circle as a proxy for the hodograph.
